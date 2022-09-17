@@ -1,0 +1,25 @@
+<?php return array (
+  'parameters' => 
+  array (
+    'database_host' => 'localhost',
+    'database_port' => '',
+    'database_name' => 'p626549_oazis',
+    'database_user' => 'p626549_oazis',
+    'database_password' => 'kH2gT2cA8c',
+    'database_prefix' => 'ps_',
+    'database_engine' => 'InnoDB',
+    'mailer_transport' => 'smtp',
+    'mailer_host' => '127.0.0.1',
+    'mailer_user' => NULL,
+    'mailer_password' => NULL,
+    'secret' => 'AgoiN8Hfaexh9rxQ2BFFx55VmWofCx3Gc8HuxVrUSSpJnvoFK3JrvuUTn2MJpIBE',
+    'ps_caching' => 'CacheMemcache',
+    'ps_cache_enable' => false,
+    'ps_creation_date' => '2022-09-16',
+    'locale' => 'en-US',
+    'use_debug_toolbar' => true,
+    'cookie_key' => 'PmrPRoi1J7xAAYvLi6rnXz2dnLmQ5UQgcJD3LTqoTKajk98kSf3uPpwZ2g3TKp3g',
+    'cookie_iv' => 'Sgnras8JnfDsFGcK96hnIhWjqtt3XAu8',
+    'new_cookie_key' => 'def000002a222e224a787b301b69f419e7d175ac1221a1f363b187ad76d8ea0e19326787557d9bdf5b38371c9a711f2709e95626047210900aac56b10c802649b0e669f1',
+  ),
+);

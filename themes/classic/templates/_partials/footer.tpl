@@ -45,8 +45,8 @@
       <div class="col-md-12">
         <p class="text-sm-center">
           {block name='copyright_link'}
-            <a href="https://www.prestashop.com" target="_blank" rel="noopener noreferrer nofollow">
-              {l s='%copyright% %year% - Ecommerce software by %prestashop%' sprintf=['%prestashop%' => 'PrestaShop™', '%year%' => 'Y'|date, '%copyright%' => '©'] d='Shop.Theme.Global'}
+            <a href="https://oasis-light.ru" target="_blank" rel="noopener noreferrer nofollow">
+              {l s='%copyright% %year% - %prestashop%' sprintf=['%prestashop%' => 'Oasis-Light', '%year%' => 'Y'|date, '%copyright%' => '©'] d='https://oasis-light.ru'}
             </a>
           {/block}
         </p>

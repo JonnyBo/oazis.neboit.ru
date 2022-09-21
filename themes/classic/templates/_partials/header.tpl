@@ -33,17 +33,39 @@
     <div class="container">
       <div class="row">
         <div class="hidden-sm-down">
-          <div class="col-md-5 col-xs-12">
+          <div class="col-md-12 col-xs-12 d-flex">
+              <div class="float-xs-left col-md-1">
+                  <div class="dropdown">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons d-inline">&#xE5D2;</i></button>
+                      <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                          <li><a class="dropdown-item active" href="#">Action</a></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Separated link</a></li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="col-md-2 hidden-sm-down" id="_desktop_logo">
+                  {if $shop.logo_details}
+                      {if $page.page_name == 'index'}
+                          <h1>
+                              {renderLogo}
+                          </h1>
+                      {else}
+                          {renderLogo}
+                      {/if}
+                  {/if}
+              </div>
+              <div class="col-md-9">
             {hook h='displayNav1'}
+              </div>
           </div>
-          <div class="col-md-7 right-nav">
+          <div class="col-md-12 right-nav">
               {hook h='displayNav2'}
           </div>
         </div>
-        <div class="hidden-md-up text-sm-center mobile">
-          <div class="float-xs-left" id="menu-icon">
-            <i class="material-icons d-inline">&#xE5D2;</i>
-          </div>
+        <div class="text-sm-center mobile">
           <div class="float-xs-right" id="_mobile_cart"></div>
           <div class="float-xs-right" id="_mobile_user_info"></div>
           <div class="top-logo" id="_mobile_logo"></div>
@@ -58,18 +80,7 @@
   <div class="header-top">
     <div class="container">
        <div class="row">
-        <div class="col-md-2 hidden-sm-down" id="_desktop_logo">
-          {if $shop.logo_details}
-            {if $page.page_name == 'index'}
-              <h1>
-                {renderLogo}
-              </h1>
-            {else}
-              {renderLogo}
-            {/if}
-          {/if}
-        </div>
-        <div class="header-top-right col-md-10 col-sm-12 position-static">
+        <div class="header-top-right col-md-12 col-sm-12 position-static">
           {hook h='displayTop'}
         </div>
       </div>

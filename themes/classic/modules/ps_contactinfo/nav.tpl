@@ -22,10 +22,12 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-<div id="_desktop_contact_link">
+{* var_dump($contact_infos) *}
+<div id="_desktop_contact_link" class="col-md-3">
   <div id="contact-link">
-    {if $contact_infos.phone}
-      {* [1][/1] is for a HTML tag. *}
+      <a href="tel:{$contact_infos.phone}">{$contact_infos.phone}</a>
+      <a href="mailto:{$contact_infos.email}">{$contact_infos.email}</a>
+    {* if $contact_infos.phone}
       {l
         s='Call us: [1]%phone%[/1]'
         sprintf=[
@@ -37,6 +39,6 @@
       }
     {else}
       <a href="{$urls.pages.contact}">{l s='Contact us' d='Shop.Theme.Global'}</a>
-    {/if}
+    {/if *}
   </div>
 </div>

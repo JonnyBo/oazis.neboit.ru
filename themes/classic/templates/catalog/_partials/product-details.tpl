@@ -56,9 +56,27 @@
         <p class="h6">{l s='Data sheet' d='Shop.Theme.Catalog'}</p>
         <dl class="data-sheet">
           {foreach from=$product.grouped_features item=feature}
-            <dt class="name">{$feature.name}</dt>
-            <dd class="value">{$feature.value|escape:'htmlall'|nl2br nofilter}</dd>
+              {if $feature.value && !in_array($feature.id_feature, [194, 193, 195, 227, 223, 225, 215])}
+                    <dt class="name">{$feature.name}</dt>
+                    <dd class="value">{$feature.value|escape:'htmlall'|nl2br nofilter}</dd>
+              {/if}
           {/foreach}
+          {if $product.width && $product.width > 0}
+              <dt class="name">Ширина</dt>
+              <dd class="value">{$product.width|number_format:2:".":","}</dd>
+          {/if}
+            {if $product.height && $product.height > 0}
+                <dt class="name">Высота</dt>
+                <dd class="value">{$product.height|number_format:2:".":","}</dd>
+            {/if}
+            {if $product.depth && $product.depth > 0}
+                <dt class="name">Глубина</dt>
+                <dd class="value">{$product.depth|number_format:2:".":","}</dd>
+            {/if}
+            {if $product.weight && $product.weight > 0}
+                <dt class="name">Вес</dt>
+                <dd class="value">{$product.weight|number_format:2:".":","}</dd>
+            {/if}
         </dl>
       </section>
     {/if}

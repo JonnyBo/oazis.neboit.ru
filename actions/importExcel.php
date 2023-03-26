@@ -79,11 +79,11 @@ class ExcelUpdate
     }
 
     public function processCloyd($row, $supplier_id, $titles) {
-        if (!$category_id = $this->getCategoryId(trim($row[14]))) {
+        /*if (!$category_id = $this->getCategoryId(trim($row[14]))) {
             $category_id = $this->addCategory(trim($row[14]), 2);
         }
         if (!$category_id)
-            return false;
+            return false;*/
         $ean13 = intval(0);
         $code = trim($row[21]);
         $price = round(floatval($row[3]), 2);
@@ -142,16 +142,16 @@ class ExcelUpdate
             }*/
         } else {
             $this->updateProduct($product_id, $price, $quantity);
-            $this->setFeature($row, $titles, $product_id, $keysFeatures, $keysNumbers);
+            //$this->setFeature($row, $titles, $product_id, $keysFeatures, $keysNumbers);
         }
     }
 
     public function processOasis($row, $supplier_id, $titles) {
-        if (!$category_id = $this->getCategoryId(trim($row[6]))) {
+        /*if (!$category_id = $this->getCategoryId(trim($row[6]))) {
             $category_id = $this->addCategory(trim($row[6]), 2);
         }
         if (!$category_id)
-            return false;
+            return false;*/
         $ean13 = intval(0);
         $code = trim($row[4]);
         $price = 100.00;
@@ -186,7 +186,7 @@ class ExcelUpdate
             }
 
         } else {
-            $price = 200.00;
+            $price = 0;
             $this->updateProduct($product_id, $price, $quantity);
         }
     }
@@ -471,8 +471,8 @@ class ExcelUpdate
 $result = 'error';
 //$fileCatalog = 'ambrella_catalog.xls';
 $inputData = [];
-//$inputData[] = ['file' =>'orange_catalog_2022.xlsx', 'supplier_id' => 3];
-$inputData[] = ['file' =>'ostatki.xlsx', 'supplier_id' => 4];
+$inputData[] = ['file' =>'orange_catalog_2022.xlsx', 'supplier_id' => 3];
+//$inputData[] = ['file' =>'ostatki.xlsx', 'supplier_id' => 4];
 //$inputData[] = ['file' =>'cloyd.shop_2022-11-09.xls', 'supplier_id' => 5];
 
 $excel = new ExcelUpdate();

@@ -43,6 +43,8 @@ class ExcelUpdate
             }
             for ($i = $start; $i < $highestRow; $i++) {
                 $row = $worksheet[$i];
+                /*if ($i > 10)
+                    break;*/
                 switch ($supplier_id) {
                     case 3:
                         $this->processOasis($row, $supplier_id, $titles);
@@ -113,29 +115,34 @@ class ExcelUpdate
     }
 
     public function processStLuce($row, $supplier_id, $titles) {
-        if (!$category_id = $this->getCategoryId(trim($row[16]))) {
+        /*if (!$category_id = $this->getCategoryId(trim($row[16]))) {
             $category_id = $this->addCategory(trim($row[16]), 2);
         }
         if (!$category_id)
-            return false;
+            return false;*/
         $ean13 = intval($row[46]);
         $code = trim($row[1]);
-        $price = round(floatval($row[5]), 2);
+        $price = str_replace(' ', '', $row[5]);
+        $price = str_replace(',', '', $price);
+        $price = round(floatval($price), 2);
         $quantity = (intval($row[10])) ? intval($row[10]) : 1;
         $name =  mb_convert_encoding($row[3], 'UTF-8', 'UTF-8');
+        $keysFeatures = array_merge([0, 2, 4, 11, 45], range(14, 34));
+        $keysNumbers = [21, 31, 32, 36, 37, 38, 39, 40, 41, 42, 43, 44];
         if (!$product_id = $this->getProductId($code)) {
-            $product_id = $this->addProduct($ean13, $code, $name, $quantity, '', mb_strimwidth($name, 0, 50, ""), $price, $category_id, [$category_id], floatval($row[36]), floatval($row[35]), floatval($row[37]), floatval($row[44]), $supplier_id);
+            /*$product_id = $this->addProduct($ean13, $code, $name, $quantity, '', mb_strimwidth($name, 0, 50, ""), $price, $category_id, [$category_id], floatval($row[36]), floatval($row[35]), floatval($row[37]), floatval($row[44]), $supplier_id);
             if ($product_id) {
-                $keysFeatures = array_merge([0, 2, 4, 11, 45], range(14, 34));
+
                 //print_r($keysFeatures);
                 $this->setFeature($row, $titles, $product_id, $keysFeatures);
                 //add images
                 if ($row[13]) {
                     $this->addProductImage($product_id, $row[13], true);
                 }
-            }
+            }*/
         } else {
             $this->updateProduct($product_id, $price, $quantity);
+            $this->setFeature($row, $titles, $product_id, $keysFeatures, $keysNumbers);
         }
     }
 
@@ -184,15 +191,21 @@ class ExcelUpdate
         }
     }
 
-    public function setFeature($row, $titles, $product_id, $keysFeatures) {
+    public function setFeature($row, $titles, $product_id, $keysFeatures, $keyNumbers = []) {
 
-        //print_r($keysFeatures);
         $values = [];
         $names = [];
         $cover = true;
         for ($j = 0; $j < count($row); $j++) {
             if (in_array($j, $keysFeatures)) {
                 $names[] = $titles[$j];
+                /*if (in_array($j, $keyNumbers)) {
+                    echo $row[$j];
+                    $row[$j] = str_replace(' ', '', $row[$j]);
+                    $row[$j] = str_replace(',', '.', $row[$j]);
+                    $row[$j] = floatval($row[$j]);
+                    echo $row[$j];
+                }*/
                 $values[] = $row[$j];
             }
         }
@@ -298,6 +311,7 @@ class ExcelUpdate
 
     public function updateProduct($product_id, $price, $quantity) {
         try {
+            //echo $product_id . ' - ' . $price . ' - ' . $quantity . "<br>";
             if ($product_id) {
                 $product = new Product($product_id); // Product ID
                 $product->price = $price; // Float value

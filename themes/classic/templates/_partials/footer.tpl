@@ -45,8 +45,8 @@
       <div class="col-md-12">
         <p class="text-sm-center">
           {block name='copyright_link'}
-            <a href="https://oasis-light.ru" target="_blank" rel="noopener noreferrer nofollow">
-              {l s='%copyright% %year% - %prestashop%' sprintf=['%prestashop%' => 'Oasis-Light', '%year%' => 'Y'|date, '%copyright%' => '©'] d='https://oasis-light.ru'}
+            <a href="https://oazis.neboit.ru" target="_blank" rel="noopener noreferrer nofollow">
+              {l s='%copyright% %year% - %prestashop%' sprintf=['%prestashop%' => 'Light', '%year%' => 'Y'|date, '%copyright%' => '©'] d='https://oazis.neboit.ru'}
             </a>
           {/block}
         </p>

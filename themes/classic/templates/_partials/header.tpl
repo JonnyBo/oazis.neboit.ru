@@ -36,14 +36,15 @@
           <div class="col-md-12 col-xs-12 d-flex">
               <div class="float-xs-left col-md-1">
                   <div class="dropdown">
-                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons d-inline">&#xE5D2;</i></button>
-                      <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                          <li><a class="dropdown-item active" href="#">Action</a></li>
-                          <li><a class="dropdown-item" href="#">Another action</a></li>
-                          <li><a class="dropdown-item" href="#">Something else here</a></li>
-                          <li><hr class="dropdown-divider"></li>
-                          <li><a class="dropdown-item" href="#">Separated link</a></li>
-                      </ul>
+                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons d-inline">&#xE5D2;</i></button>
+                      <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" href="/content/4-about-us">О Компании</a>
+                          <a class="dropdown-item" href="/content/1-dostavka-i-oplata">Доставка</a>
+                          <a class="dropdown-item" href="/content/5-secure-payment">Безопасность платежей</a>
+                          <a class="dropdown-item" href="/content/2-legal-notice">Правовое положение</a>
+                          <a class="dropdown-item" href="/content/3-terms-and-conditions-of-use">Порядок и условия использования</a>
+                          <a class="dropdown-item" href="/content/6-politika-konfidencialnosti">Политика конфиденциальности</a>
+                      </div>
                   </div>
               </div>
               <div class="col-md-2 hidden-sm-down" id="_desktop_logo">

@@ -7472,7 +7472,7 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 }
 
 .top-menu a[data-depth="0"] {
-    padding: .625rem;
+    padding: .5rem;
     font-size: 1rem;
     font-weight: 600
 }
@@ -9635,6 +9635,10 @@ body#checkout #hook-display-after-carrier > [class^="col"].links .row > [class^=
 
 #search_filters_brands .facet .facet-label, #search_filters_suppliers .facet .facet-label {
     margin-bottom: 0.3125rem
+}
+#search_filters .facet .facet-label span.magnitude, #search_filters_brands .facet .facet-label span.magnitude, #search_filters_suppliers .facet .facet-label span.magnitude {
+    color: #24b9d7;
+    font-size: 14px;
 }
 
 .pagination {

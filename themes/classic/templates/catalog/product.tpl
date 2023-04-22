@@ -69,6 +69,7 @@
             {/block}
           </section>
         {/block}
+          <div class="clear"></div>
         </div>
         <div class="col-md-6">
           {block name='page_header_container'}
@@ -134,9 +135,14 @@
 
             </div>
 
-            {block name='hook_display_reassurance'}
+            {*block name='hook_display_reassurance'}
               {hook h='displayReassurance'}
-            {/block}
+            {/block*}
+
+          </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
 
             {block name='product_tabs'}
               <div class="tabs">
@@ -219,11 +225,10 @@
                  </div>
                  {/foreach}
               </div>
-            </div>
+
           {/block}
-        </div>
-      </div>
-    </div>
+
+
 
     {block name='product_accessories'}
       {if $accessories}

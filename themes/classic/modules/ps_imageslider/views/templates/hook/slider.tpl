@@ -25,7 +25,7 @@
 
 {if $homeslider.slides}
     <div class="row">
-        <div class="col-md-3">
+        <!--div class="col-md-3">
             {foreach from=$homeslider.slides item=slide name='homeslider'}
                 {if $slide.legend == 'banner'}
                     <a href="{$slide.url}">
@@ -42,8 +42,8 @@
                     </a>
                 {/if}
             {/foreach}
-        </div>
-        <div class="col-md-9">
+        </div-->
+        <div class="col-md">
             <div id="carousel" data-ride="carousel" class="carousel slide" data-interval="{$homeslider.speed}"
                  data-wrap="{(string)$homeslider.wrap}" data-pause="{$homeslider.pause}" data-touch="true">
                 <ol class="carousel-indicators">

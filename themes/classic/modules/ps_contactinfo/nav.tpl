@@ -23,7 +23,7 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 {* var_dump($contact_infos) *}
-<div id="_desktop_contact_link" class="col-md-3">
+<div id="_desktop_contact_link" class="col-md-3 hidden-md-down">
   <div id="contact-link">
       <a href="tel:{$contact_infos.phone}">{$contact_infos.phone}</a>
       <a href="mailto:{$contact_infos.email}">{$contact_infos.email}</a>
